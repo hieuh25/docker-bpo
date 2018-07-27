@@ -1,11 +1,11 @@
-#! /usr/bin/env python
+#!/usr/bin/python
 
 import os.path as osp
 # roundup_path = osp.realpath(osp.join(osp.dirname(__file__), '../'))
-roundup_path = "/opt/tracker/roundup"
+roundup_path = "/opt/roundup"
 
 import sys
 sys.path.append(roundup_path)
 
-from roundup.scripts.roundup_mailgw import run
+from roundup.scripts.roundup_server import run
 run()

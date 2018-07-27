@@ -1,0 +1,27 @@
+version: "3.3"
+
+services:
+  tracker:
+    build: .
+    container_name: tracker
+    depends_on:
+      - db
+    volumes:
+      - ./tracker/:/srv/tracker
+    ports:
+      - "9999:9999"
+    entrypoint: python /srv/tracker/bin/docker_entrypoint.py
+    environment:
+      PYTHONUNBUFFERED: 1
+
+  db:
+    image: postgres:9.6-alpine
+    container_name: db
+    volumes:
+      - ./data/pgdata/:/var/lib/postgresql/data
+    expose:
+      - "5432"
+    restart: always
+    environment:
+      POSTGRES_USER: roundup
+      POSTGRES_PASSWORD: roundup

@@ -1,0 +1,6 @@
+/tracker/python-dev
+/tracker/roundup
+/data/**
+!/data/.gitkeep
+/tracker/.flags/**
+!/tracker/.flags/.gitkeep

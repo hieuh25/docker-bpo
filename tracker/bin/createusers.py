@@ -10,7 +10,7 @@ The password for all the users is 'pass'.
 
 import subprocess
 
-rdadmin = ['/home/tracker/bin/roundup-admin', '-i', '/opt/tracker/python-dev']
+rdadmin = ['/opt/bin/roundup-admin', '-i', '/opt/python-dev']
 
 users = ['user', 'developer', 'coordinator']
 roles = []
@@ -29,5 +29,5 @@ for user in users:
         args += ' contrib_form=1 contrib_form_date=2017-03-22.00:00:00'
 
     print('Creating user:', user)
-    print('    - user id:', end=' ', flush=True)
-    subprocess.run(rdadmin + args.split())
+    # print('    - user id:', end=' ', flush=True)
+    subprocess.call(rdadmin + args.split())
